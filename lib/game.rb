@@ -1,5 +1,4 @@
 class Game
-
   TOTAL_ERRORS_ALLOWED = 7
 
   def initialize(word)
@@ -30,10 +29,7 @@ class Game
   end
 
   def letters_to_guess
-    result =
-      @letters.map do |letter|
-        letter if @user_guesses.include?(normalize_letter(letter))
-      end
+    @letters.map { |letter| letter if @user_guesses.include?(normalize_letter(letter)) }
   end
 
   def lost?

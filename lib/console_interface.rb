@@ -1,10 +1,6 @@
 class ConsoleInterface
-  require "colorize"
-
   FIGURES =
-      Dir["#{__dir__}/../data/figures/*.txt"].
-      sort.
-      map { |file_name| File.read(file_name) }
+    Dir["#{__dir__}/../data/figures/*.txt"].sort.map { |file_name| File.read(file_name) }
 
   def initialize(game)
     @game = game
@@ -46,7 +42,6 @@ class ConsoleInterface
 
   def get_input
     print "Введите следующую букву: "
-    letter = gets[0].upcase
-    letter
+    gets[0].upcase
   end
 end
